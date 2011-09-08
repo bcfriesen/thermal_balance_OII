@@ -189,35 +189,35 @@ c     Start the loop!
 
 c        Now we calculute the q values using Eqs. 3.18 and 3.20 in (AGN)^2
 
-         q(2,1) = (A_0/sqrt(T_e)) * (upsilon(1,2)/omega(2))
-         q(1,2) = (omega(2)/omega(1)) * q(2,1) * exp(-E(1,2)/(k*T_e))
+         q(2,1) = 0.0d0
+         q(1,2) = 0.0d0
 
-         q(3,1) = (A_0/sqrt(T_e)) * (upsilon(1,3)/omega(3))
-         q(1,3) = (omega(3)/omega(1)) * q(3,1) * exp(-E(1,3)/(k*T_e))
+         q(3,1) = 0.0d0
+         q(1,3) = 0.0d0
 
-         q(3,2) = (A_0/sqrt(T_e)) * (upsilon(2,3)/omega(3))
-         q(2,3) = (omega(3)/omega(2)) * q(3,2) * exp(-E(2,3)/(k*T_e))
+         q(3,2) = 0.0d0
+         q(2,3) = 0.0d0
 
-         q(4,1) = (A_0/sqrt(T_e)) * (upsilon(1,4)/omega(4))
-         q(1,4) = (omega(4)/omega(1)) * q(4,1) * exp(-E(1,4)/(k*T_e))
+         q(4,1) = 0.0d0
+         q(1,4) = 0.0d0
 
-         q(4,2) = (A_0/sqrt(T_e)) * (upsilon(2,4)/omega(4))
-         q(2,4) = (omega(4)/omega(2)) * q(4,2) * exp(-E(2,4)/(k*T_e))
+         q(4,2) = 0.0d0
+         q(2,4) = 0.0d0
 
-         q(4,3) = (A_0/sqrt(T_e)) * (upsilon(3,4)/omega(4))
-         q(3,4) = (omega(4)/omega(3)) * q(4,3) * exp(-E(4,3)/(k*T_e))
+         q(4,3) = 0.0d0
+         q(3,4) = 0.0d0
 
-         q(5,1) = (A_0/sqrt(T_e)) * (upsilon(1,5)/omega(5))
-         q(1,5) = (omega(5)/omega(1)) * q(5,1) * exp(-E(1,5)/(k*T_e))
+         q(5,1) = 0.0d0
+         q(1,5) = 0.0d0
 
-         q(5,2) = (A_0/sqrt(T_e)) * (upsilon(2,5)/omega(5))
-         q(2,5) = (omega(5)/omega(2)) * q(5,2) * exp(-E(2,5)/(k*T_e))
+         q(5,2) = 0.0d0
+         q(2,5) = 0.0d0
 
-         q(5,3) = (A_0/sqrt(T_e)) * (upsilon(3,5)/omega(5))
-         q(3,5) = (omega(5)/omega(3)) * q(5,3) * exp(-E(5,3)/(k*T_e))
+         q(5,3) = 0.0d0
+         q(3,5) = 0.0d0
 
-         q(5,4) = (A_0/sqrt(T_e)) * (upsilon(4,5)/omega(5))
-         q(4,5) = (omega(5)/omega(4)) * q(5,4) * exp(-E(5,4)/(k*T_e))
+         q(5,4) = 0.0d0
+         q(4,5) = 0.0d0
 c---------------------------------------------------------------------------
 
 c---------------------------SET UP MATRICES---------------------------------
@@ -270,7 +270,7 @@ c        contain the fractional populations of the first 5 levels.
          N(2) = 0.0d+0
          N(3) = 0.0d+0
          N(4) = 0.0d+0
-         N(5) = N_OII(T_e)
+         N(5) = 1.0d+0
 c-----------------------------------------------------------------------
 
 
@@ -280,7 +280,7 @@ c-----------------------------------------------------------------------
 
 
 c        Write out the results
-         write(11,*) T_e, N(1), N(2), N(3), N(4), N(5)
+         write(11,'(6es12.4e2)') T_e, N(1), N(2), N(3), N(4), N(5)
 
 c        Do uniform increments in log(T_e)
          T_e = log(T_e)
