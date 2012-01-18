@@ -35,10 +35,10 @@ double precision, parameter :: A_0 = 8.629d-06
 ! omega: degeneracies of the levels
 integer :: omega(5)
 
-! k: Boltzmann's constant (cgs)
+! k: Boltzmann's constant (erg/K)
 double precision, parameter :: k_B = 1.381d-16
 
-! E: energies between the levels
+! E: energies between the levels (erg)
 double precision :: E(5,5)
 
 ! upsilon: velocity-averaged collision strengths
@@ -48,9 +48,6 @@ double precision :: upsilon(5,5)
 ! L: orbital angular momentum of each level
 ! J: total angular momentum of each level
 double precision :: S(5), L(5), J(5)
-
-! N_OII: the temperature-dependent number density of O II
-double precision :: N_OII
 !---------------------------------------------------------------------------
 
 
@@ -294,17 +291,4 @@ close(11)
 write(*,*) 'SUCCESS!!!!'
 
 end program main
-!-------------------------------------------------------------------------------
-
-
-
-
-!-------------------------------------------------------------------------------
-function N_OII(T)
-implicit none
-double precision :: N_OII
-double precision :: T
-N_OII = -(5.3d4 * (T - 8.6d4) * (T - 2.9d4) * (T + 5.0d4)) / &
-        ((T - 5.7d5) * (T - 8.6d4) * (T - 2.9d4) * (T + 5.1d4))
-end function N_OII
 !-------------------------------------------------------------------------------
