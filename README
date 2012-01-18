@@ -1,0 +1,9 @@
+This program calculates the fractional level populations of a 5-level
+O II model atom, accounting only for collisional
+excitation/de-excitation and spontaneous emission. A nice example of
+solving a linear system of equations using matrix inversion.
+
+REFERENCES:
+
+"Astrophysics of Gaseous Nebulae and Active Galactic Nuclei" by
+Osterbrock and Ferland (2nd ed.)
