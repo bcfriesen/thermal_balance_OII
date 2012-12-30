@@ -2,6 +2,7 @@ program main
 implicit none
 
 !-----------------------VARIABLE DECLARATIONS-------------------------------
+integer, parameter :: dp = kind(1.0d0)
 ! M: all the coefficients that will multiply the N's
 ! A: all the spontaneous transition rates
 ! N: before calling DGESV (the LAPACK linear solver): all zeros
@@ -9,7 +10,7 @@ implicit none
 !    after calling DGESV: all the fractional populations of levels
 !    1 through 5
 ! q: all the collision rates
-double precision :: M(5,5), A(5,5), N(5), q(5,5)
+real(kind=dp) :: M(5,5), A(5,5), N(5), q(5,5)
 
 ! i: loop index
 ! pivot: something DGESV needs to solve this matrix equation (not
@@ -19,27 +20,27 @@ integer :: i, pivot(5), ok
 
 ! N_e: electron number density
 ! T_e: electron temperature
-double precision :: N_e, T_e
+real(kind=dp) :: N_e, T_e
 
 ! A_0: a constant for calculating the q's
-double precision, parameter :: A_0 = 8.629d-06
+real(kind=dp), parameter :: A_0 = 8.629d-06
 
 ! omega: degeneracies of the levels
 integer :: omega(5)
 
 ! k: Boltzmann's constant (erg/K)
-double precision, parameter :: k_B = 1.381d-16
+real(kind=dp), parameter :: k_B = 1.381d-16
 
 ! E: energies between the levels (erg)
-double precision :: E(5,5)
+real(kind=dp) :: E(5,5)
 
 ! upsilon: velocity-averaged collision strengths
-double precision :: upsilon(5,5)
+real(kind=dp) :: upsilon(5,5)
 
 ! S: spin of each level
 ! L: orbital angular momentum of each level
 ! J: total angular momentum of each level
-double precision :: S(5), L(5), J(5)
+real(kind=dp) :: S(5), L(5), J(5)
 !---------------------------------------------------------------------------
 
 
